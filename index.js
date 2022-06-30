@@ -1,5 +1,7 @@
 const battery = require("battery");
 const chalk = require("chalk");
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/";
 
 (async () => {
   const { level, charging } = await battery();
@@ -11,5 +13,21 @@ const chalk = require("chalk");
   }
 
   console.log(`${charging ? chalk.greenBright("Charging") : chalk.redBright("Not charging")}, ${chalk[levelColour](`${Math.round(level * 100)}%`)}`)
-  //=> true
+
+
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    const dbo = db.db("bujhlee");
+    let bijliStatus = { level: level, charging: charging };
+    dbo.collection("bijlistatus").insertOne(bijliStatus, function (err, res) {
+      if (err) throw err;
+      console.log("1 Bujhlee ...");
+      db.close();
+    });
+  });
+
+  setTimeout(() => {
+
+  });
+
 })();
