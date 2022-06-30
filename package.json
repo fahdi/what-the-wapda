@@ -1,0 +1,16 @@
+{
+  "name": "battery_info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "battery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "battery": "^1.0.1",
+    "battery-cli": "^1.0.2",
+    "chalk": "^4.1.2"
+  }
+}
