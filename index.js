@@ -1,11 +1,15 @@
 const battery = require("battery");
 const chalk = require("chalk");
+const moment = require('moment'); // require
+moment().format();
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/";
 
 setInterval(() => {
   (async () => {
     const { level, charging } = await battery();
+
+    let levelColour = "greenBright"
 
     if (level > 0.5) {
       levelColour = "greenBright"
@@ -24,7 +28,7 @@ setInterval(() => {
         {},
         { sort: { _id: -1 } },
         (err, data) => {
-          console.log(data.charging);
+          // console.log(data.charging);
 
           if (err) throw err;
 

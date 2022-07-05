@@ -12,6 +12,7 @@
     "battery": "^1.0.1",
     "battery-cli": "^1.0.2",
     "chalk": "^4.1.2",
+    "moment": "^2.29.3",
     "mongodb": "^4.7.0"
   }
 }
