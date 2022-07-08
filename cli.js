@@ -35,7 +35,12 @@ module.exports = (async () => {
             }
           }
 
-          console.log("Power outage in the last 24 hours: " + (ms / (1000 * 60 * 60)).toFixed(2) + " hours")
+          if((ms / (1000 * 60 * 60)) > 2) {
+            console.log(chalk.redBright("Power outage in the last 24 hours: " + (ms / (1000 * 60 * 60)).toFixed(2) + " hours"))
+          } else {
+            console.log(chalk.greenBright("Power outage in the last 24 hours: " + (ms / (1000 * 60 * 60)).toFixed(2) + " hours"))
+          }
+
 
           if (err) throw err;
           db.close();
