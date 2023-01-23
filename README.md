@@ -1,6 +1,6 @@
 # Bujhleee
 
-Bijli Bujhlee is a smalll utility tryign tofigure out hiow many hours of power outage we are getting
+Bijli Bujhlee is a smalll utility tryign tofigure out how many hours of power outage we are getting. 
 
 ## Mon 23rd Jan, 2023:
 
